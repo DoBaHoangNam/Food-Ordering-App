@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityFoodDetails">
+
+    <TextView
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icon_return"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="@dimen/definite_dimen_20"
+        />
+
+    <TextView
+        android:id="@+id/tvFoodName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_food_details"
+        android:textStyle="bold"
+        android:fontFamily="@font/yeonsung_regular"
+        android:textSize="@dimen/text_size_xhuge"
+        app:layout_constraintTop_toBottomOf="@id/btnBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvFoodImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvFoodName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/definite_dimen_20"
+        app:cardCornerRadius="@dimen/definite_dimen_18">
+        <ImageView
+            android:id="@+id/imgFood"
+            android:layout_width="@dimen/definite_dimen_200"
+            android:layout_height="@dimen/definite_dimen_200"
+            android:src="@drawable/menu2"
+            />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvShortDes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_short_description"
+        android:textSize="@dimen/text_size_large"
+        android:fontFamily="@font/yeonsung_regular"
+        app:layout_constraintTop_toBottomOf="@id/cvFoodImg"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/definite_dimen_20"
+        android:layout_marginTop="@dimen/definite_dimen_20"
+
+        />
+
+    <TextView
+        android:id="@+id/tvDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_detail_food"
+        android:textSize="@dimen/text_size_small"
+        android:fontFamily="@font/yeonsung_regular"
+        app:layout_constraintTop_toBottomOf="@id/tvShortDes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/definite_dimen_20"
+        android:layout_marginTop="@dimen/definite_dimen_10"
+        android:layout_marginEnd="@dimen/definite_dimen_20"
+
+
+        />
+
+    <TextView
+        android:id="@+id/tvIngredient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_ingredients"
+        android:textSize="@dimen/text_size_large"
+        android:fontFamily="@font/yeonsung_regular"
+        app:layout_constraintTop_toBottomOf="@id/tvDetail"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/definite_dimen_20"
+        android:layout_marginTop="@dimen/definite_dimen_20"
+
+        />
+
+    <TextView
+        android:id="@+id/tvDetailIngredient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/definite_dimen_20"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/yeonsung_regular"
+        android:text="@string/tv_ingredient_detail"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvIngredient"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add To Chart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingStart="@dimen/definite_dimen_20"
+        android:paddingEnd="@dimen/definite_dimen_20"
+        android:background="@drawable/rounded_green_button"
+        android:layout_marginBottom="@dimen/definite_dimen_10"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/choose_your_location_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_choose_your_location"
+        android:fontFamily="@font/yeonsung_regular"
+        android:textSize="@dimen/text_size_xxhuge"
+        android:layout_marginTop="@dimen/definite_dimen_60"
+        android:layout_marginStart="@dimen/definite_dimen_30"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <AutoCompleteTextView
+        android:id="@+id/listOfLocation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/definite_dimen_56"
+        android:layout_marginTop="@dimen/definite_dimen_10"
+        android:background="@drawable/rounded_white_button"
+        android:fontFamily="@font/yeonsung_regular"
+        android:drawableEnd="@drawable/arrow_circle_down"
+        android:layout_marginRight="@dimen/definite_dimen_30"
+        android:layout_marginLeft="@dimen/definite_dimen_30"
+        android:hint="@string/tv_choose_location"
+        android:paddingStart="@dimen/definite_dimen_10"
+        android:paddingEnd="@dimen/definite_dimen_10"
+        android:completionThreshold="0"
+        app:layout_constraintTop_toBottomOf="@id/choose_your_location_tv" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/continueBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/rounded_green_button"
+        android:layout_marginBottom="@dimen/definite_dimen_50"
+        android:text="let's order"
+        android:fontFamily="@font/yeonsung_regular"
+        android:textSize="@dimen/text_size_normal"
+        android:paddingLeft="@dimen/definite_dimen_20"
+        android:paddingRight="@dimen/definite_dimen_20"
+        android:visibility="gone"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

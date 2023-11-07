@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.HomeFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.33"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline">
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/image_slider"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:iss_auto_cycle="true"
+            app:iss_delay="2000"
+            app:iss_period="2000"
+            app:iss_text_align="CENTER"
+            app:iss_no_dots="true"
+            />
+    </androidx.cardview.widget.CardView>
+
+
+    <RelativeLayout
+        android:id="@+id/popular_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/banner"
+        android:layout_marginTop="@dimen/definite_dimen_20">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/definite_dimen_38"
+            android:fontFamily="@font/yeonsung_regular"
+            android:text="@string/tv_popular"
+            android:textSize="@dimen/text_size_xxnormal" />
+
+        <TextView
+            android:id="@+id/viewAllMenuBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_white_button"
+            android:textColor="@color/green"
+            android:fontFamily="@font/yeonsung_regular"
+            android:text="@string/tv_view_menu"
+            android:layout_gravity="end"
+            android:layout_alignParentEnd="true"
+            android:paddingStart="@dimen/definite_dimen_10"
+            android:paddingEnd="@dimen/definite_dimen_10"
+            android:paddingTop="@dimen/definite_dimen_6"
+            android:paddingBottom="@dimen/definite_dimen_4"
+            android:layout_marginEnd="@dimen/definite_dimen_20"
+            />
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recvFoodList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/popular_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/definite_dimen_20"
+        android:layout_marginEnd="@dimen/definite_dimen_20"
+        android:layout_marginTop="@dimen/definite_dimen_18"
+        android:layout_marginBottom="@dimen/definite_dimen_10"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

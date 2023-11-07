@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Menu"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_size_huge"
+        android:fontFamily="@font/yeonsung_regular"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/definite_dimen_10"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recvFoodList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/definite_dimen_20"
+        android:layout_marginEnd="@dimen/definite_dimen_20"
+        android:layout_marginTop="@dimen/definite_dimen_18"
+        android:layout_marginBottom="@dimen/definite_dimen_10"
+        />
+
+</LinearLayout>
