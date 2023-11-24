@@ -1,5 +1,8 @@
 package com.example.foodorderingapp.adapter
 
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -11,8 +14,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.foodorderingapp.R
 import com.example.foodorderingapp.databinding.MenuFoodItemBinding
 import com.example.foodorderingapp.model.Food
+import com.example.foodorderingapp.ui.activity.ActivityFoodDetails
 
-class PopularAdapter (private val items:List<Food>):
+class PopularAdapter (private val items:List<Food>, private val requireContext: Context):
     RecyclerView.Adapter<PopularAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
@@ -34,6 +38,14 @@ class PopularAdapter (private val items:List<Food>):
         holder.foodName.text  = currentItem.foodName
         holder.price.text = currentItem.price
         holder.image.setImageResource(currentItem.image)
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent (requireContext, ActivityFoodDetails:: class.java )
+            val bundle = Bundle()
+            bundle.putSerializable("MenuItem", items[position])
+            intent.putExtras(bundle)
+            requireContext.startActivity(intent)
+        }
 
     }
 

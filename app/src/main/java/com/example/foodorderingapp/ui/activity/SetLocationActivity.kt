@@ -1,12 +1,12 @@
-package com.example.foodorderingapp
+package com.example.foodorderingapp.ui.activity
 
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
+import com.example.foodorderingapp.R
 import com.example.foodorderingapp.databinding.ActivitySetLocationBinding
 
 class SetLocationActivity : AppCompatActivity() {

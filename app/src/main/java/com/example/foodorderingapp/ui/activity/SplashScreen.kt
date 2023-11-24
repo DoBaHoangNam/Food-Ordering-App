@@ -1,10 +1,11 @@
-package com.example.foodorderingapp
+package com.example.foodorderingapp.ui.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import com.example.foodorderingapp.R
 
 
 class SplashScreen : AppCompatActivity() {

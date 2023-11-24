@@ -1,4 +1,4 @@
-package com.example.foodorderingapp.fragment
+package com.example.foodorderingapp.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodorderingapp.R
+import com.example.foodorderingapp.adapter.MenuAdapter
 import com.example.foodorderingapp.adapter.PopularAdapter
 import com.example.foodorderingapp.databinding.FragmentMenuBottomSheetBinding
 import com.example.foodorderingapp.model.Food
@@ -35,11 +36,11 @@ class MenuBottomSheet : BottomSheetDialogFragment() {
 
     private fun displayMenuFoodItem() {
         binding.recvFoodList.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        val adapter = PopularAdapter(getListFoods())
+        val adapter = MenuAdapter(getListFoods(), requireContext())
         binding.recvFoodList.adapter = adapter
     }
 
-    private fun getListFoods(): List<Food> {
+    private fun getListFoods(): MutableList<Food> {
         val list = mutableListOf<Food>()
         list.add(Food("Burger","$5", R.drawable.menu1 ))
         list.add(Food("Sandwich","$7", R.drawable.menu2 ))

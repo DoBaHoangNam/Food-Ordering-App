@@ -1,4 +1,4 @@
-package com.example.foodorderingapp.fragment
+package com.example.foodorderingapp.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -29,7 +29,7 @@ class SearchFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentSearchBinding.inflate(inflater,container,false)
         binding.recvFoodList.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        adapter = MenuAdapter(filterMenuFood)
+        adapter = MenuAdapter(filterMenuFood, requireContext())
         binding.recvFoodList.adapter = adapter
         setupSearchView()
         showAllMenu()

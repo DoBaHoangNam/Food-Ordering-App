@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragment.CartFragment">
+    tools:context=".ui.fragment.CartFragment">
 
     <TextView
         android:id="@+id/tv_cart"
@@ -32,10 +32,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_cart"
-        app:layout_constraintBottom_toTopOf="@id/tvProceed"/>
+        app:layout_constraintBottom_toTopOf="@id/btnProceed"/>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvProceed"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnProceed"
         android:layout_width="match_parent"
         android:layout_height="@dimen/definite_dimen_70"
         android:background="@drawable/rounded_white_button"
@@ -43,7 +43,7 @@
         android:text="Proceed"
         android:gravity="center"
         android:fontFamily="@font/yeonsung_regular"
-        android:textSize="@dimen/text_size_large"
+        android:textSize="@dimen/text_size_xxnormal"
         android:textColor="@color/green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

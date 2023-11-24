@@ -4,12 +4,35 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <Button
+        android:id="@+id/btnReturn"
+        android:layout_width="@dimen/definite_dimen_40"
+        android:layout_height="@dimen/definite_dimen_40"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/icon_back"
+        android:layout_marginTop="@dimen/definite_dimen_20"
+        android:layout_marginStart="@dimen/definite_dimen_20"
+        android:backgroundTint="@color/yellow"
+        />
+    <TextView
+        android:id="@+id/tvEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:fontFamily="@font/yeonsung_regular"
+        android:textSize="@dimen/text_size_huge"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/btnReturn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
     <LinearLayout
         android:id="@+id/LLInfor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvEdit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -21,8 +44,7 @@
             android:layout_marginStart="@dimen/definite_dimen_20"
             android:layout_marginEnd="@dimen/definite_dimen_20"
             android:layout_marginTop="@dimen/definite_dimen_20"
-            android:weightSum="3"
-            android:padding="@dimen/definite_dimen_14">
+            android:weightSum="3">
 
             <TextView
                 android:layout_width="0dp"
@@ -41,7 +63,6 @@
                 android:text="Do Ba Hoang Nam"
                 android:fontFamily="@font/yeonsung_regular"
                 android:layout_weight="2"
-                android:background="@drawable/profile_edit_text_shape"
                 />
 
         </LinearLayout>
@@ -54,8 +75,7 @@
             android:layout_marginStart="@dimen/definite_dimen_20"
             android:layout_marginEnd="@dimen/definite_dimen_20"
             android:layout_marginTop="@dimen/definite_dimen_20"
-            android:weightSum="3"
-            android:padding="@dimen/definite_dimen_14">
+            android:weightSum="3">
 
             <TextView
                 android:layout_width="0dp"
@@ -74,7 +94,6 @@
                 android:text="Kim Nguu, Hai Ba Trung, Ha Noi"
                 android:fontFamily="@font/yeonsung_regular"
                 android:layout_weight="2"
-                android:background="@drawable/profile_edit_text_shape"
                 />
 
         </LinearLayout>
@@ -87,41 +106,7 @@
             android:layout_marginStart="@dimen/definite_dimen_20"
             android:layout_marginEnd="@dimen/definite_dimen_20"
             android:layout_marginTop="@dimen/definite_dimen_20"
-            android:weightSum="3"
-            android:padding="@dimen/definite_dimen_14">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Email"
-                android:fontFamily="@font/yeonsung_regular"
-                android:textSize="@dimen/text_size_large"
-                android:layout_marginEnd="@dimen/definite_dimen_30"
-                android:layout_marginStart="@dimen/definite_dimen_10"
-                android:layout_weight="1"
-                />
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="nam.dbh198248@sis.hust.edu.vn"
-                android:fontFamily="@font/yeonsung_regular"
-                android:layout_weight="2"
-                android:background="@drawable/profile_edit_text_shape"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:background="@drawable/rounded_white_button"
-            android:layout_marginStart="@dimen/definite_dimen_20"
-            android:layout_marginEnd="@dimen/definite_dimen_20"
-            android:layout_marginTop="@dimen/definite_dimen_20"
-            android:weightSum="3"
-            android:padding="@dimen/definite_dimen_14">
+            android:weightSum="3">
 
             <TextView
                 android:layout_width="0dp"
@@ -140,7 +125,74 @@
                 android:text="12345678"
                 android:layout_weight="2"
                 android:fontFamily="@font/yeonsung_regular"
-                android:background="@drawable/profile_edit_text_shape"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:background="@drawable/rounded_white_button"
+            android:layout_marginStart="@dimen/definite_dimen_20"
+            android:layout_marginEnd="@dimen/definite_dimen_20"
+            android:layout_marginTop="@dimen/definite_dimen_20"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Payment Method"
+                android:fontFamily="@font/yeonsung_regular"
+                android:textSize="@dimen/text_size_large"
+                android:layout_marginEnd="@dimen/definite_dimen_30"
+                android:layout_marginStart="@dimen/definite_dimen_10"
+                android:layout_weight="1.5"
+                android:layout_gravity="center"
+                />
+
+            <ImageView
+                android:layout_width="@dimen/definite_dimen_100"
+                android:layout_height="@dimen/definite_dimen_50"
+                android:background="@drawable/icon_payment_method"
+
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:background="@drawable/rounded_white_button"
+            android:layout_marginStart="@dimen/definite_dimen_20"
+            android:layout_marginEnd="@dimen/definite_dimen_20"
+            android:layout_marginTop="@dimen/definite_dimen_20"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Total Amount"
+                android:fontFamily="@font/yeonsung_regular"
+                android:textSize="@dimen/text_size_large"
+                android:layout_marginEnd="@dimen/definite_dimen_30"
+                android:layout_marginStart="@dimen/definite_dimen_10"
+                android:layout_weight="1.5"
+                android:layout_gravity="center"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="$35"
+                android:fontFamily="@font/yeonsung_regular"
+                android:textColor="@color/green"
+                android:textSize="@dimen/text_size_large"
+                android:layout_marginEnd="@dimen/definite_dimen_30"
+                android:layout_marginStart="@dimen/definite_dimen_10"
+                android:layout_weight="1.5"
+                android:layout_gravity="center"
                 />
 
         </LinearLayout>
@@ -149,11 +201,12 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnPlaceOrder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@drawable/rounded_white_button"
-        android:text="Save Information"
+        android:text="Place My Order"
         android:textColor="@color/green"
         android:fontFamily="@font/yeonsung_regular"
         android:textSize="@dimen/text_size_normal"

@@ -1,14 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.HistoryFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.HistoryFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
+        android:id="@+id/previousTv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="Recent buy"
+        android:fontFamily="@font/yeonsung_regular"
+        android:textSize="@dimen/text_size_normal"
+        android:layout_marginStart="@dimen/definite_dimen_30"
+        android:layout_marginTop="@dimen/definite_dimen_30"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    
+    <LinearLayout
+        android:id="@+id/LNInfor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_white_button"
+        app:cardCornerRadius="@dimen/definite_dimen_10"
+        android:layout_marginTop="@dimen/definite_dimen_12"
+        android:layout_marginStart="@dimen/definite_dimen_20"
+        android:layout_marginEnd="@dimen/definite_dimen_20"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/previousTv"
+        >
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/foodOrdered"
+            android:layout_width="@dimen/definite_dimen_80"
+            android:layout_height="@dimen/definite_dimen_80"
+            android:src="@drawable/img_recent_food"
+            android:padding="@dimen/definite_dimen_10"
+            android:layout_gravity="center"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/FoodNameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spacy fresh crab"
+                android:fontFamily="@font/yeonsung_regular"
+                android:textSize="@dimen/text_size_small"
+                android:layout_marginStart="@dimen/definite_dimen_18"
+                android:layout_marginTop="@dimen/definite_dimen_18"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/restaurantNameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A restaurant"
+                android:fontFamily="@font/yeonsung_regular"
+                android:textSize="@dimen/text_size_small"
+                android:layout_marginStart="@dimen/definite_dimen_18"
+                android:layout_marginTop="@dimen/definite_dimen_4"
+                android:textStyle="normal"
+                android:textColor="@color/grey2"
+
+                />
+            <TextView
+                android:id="@+id/foodPriceTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$ 35"
+                android:fontFamily="@font/yeonsung_regular"
+                android:textSize="@dimen/text_size_xxnormal"
+                android:textColor="@color/green"
+                android:layout_marginStart="@dimen/definite_dimen_18"
+                android:layout_marginTop="@dimen/definite_dimen_4"
+                android:layout_marginBottom="@dimen/definite_dimen_10"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/previousBuyTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Previously buy"
+        android:fontFamily="@font/yeonsung_regular"
+        android:textSize="@dimen/text_size_normal"
+        android:layout_marginStart="@dimen/definite_dimen_30"
+        android:layout_marginTop="@dimen/definite_dimen_30"
+        app:layout_constraintTop_toBottomOf="@id/LNInfor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recvFoodBoughtList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/definite_dimen_20"
+        android:layout_marginEnd="@dimen/definite_dimen_20"
+        android:layout_marginTop="@dimen/definite_dimen_18"
+        android:layout_marginBottom="@dimen/definite_dimen_10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/previousBuyTv"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

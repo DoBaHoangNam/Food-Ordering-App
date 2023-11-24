@@ -1,4 +1,4 @@
-package com.example.foodorderingapp.fragment
+package com.example.foodorderingapp.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,6 +11,7 @@ import com.denzcoskun.imageslider.models.SlideModel
 import com.example.foodorderingapp.R
 import com.example.foodorderingapp.adapter.PopularAdapter
 import com.example.foodorderingapp.databinding.FragmentHomeBinding
+import com.example.foodorderingapp.ui.MenuBottomSheet
 import com.example.foodorderingapp.model.Food
 
 class HomeFragment : Fragment() {
@@ -56,7 +57,7 @@ class HomeFragment : Fragment() {
 
     private fun displayMenuFoodItem() {
         binding.recvFoodList.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        val adapter = PopularAdapter(getListFoods())
+        val adapter = PopularAdapter(getListFoods(), requireContext())
         binding.recvFoodList.adapter = adapter
     }
 
