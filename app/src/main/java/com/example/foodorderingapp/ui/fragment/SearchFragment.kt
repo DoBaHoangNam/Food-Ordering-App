@@ -1,6 +1,7 @@
 package com.example.foodorderingapp.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,12 +11,20 @@ import com.example.foodorderingapp.R
 import com.example.foodorderingapp.adapter.MenuAdapter
 import com.example.foodorderingapp.databinding.FragmentSearchBinding
 import com.example.foodorderingapp.model.Food
+import com.example.foodorderingapp.model.Item
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class SearchFragment : Fragment() {
     private lateinit var binding: FragmentSearchBinding
     private lateinit var adapter: MenuAdapter
-    private var originalMenuFood = getListFoods()
-    private val filterMenuFood = mutableListOf<Food>()
+    private lateinit var originalMenuFood: MutableList<Item>
+    private val filterMenuFood = mutableListOf<Item>()
+    private lateinit var  databaseReference: DatabaseReference
+    private lateinit var database: FirebaseDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,22 +46,29 @@ class SearchFragment : Fragment() {
     }
 
     private fun showAllMenu() {
-        filterMenuFood.clear()
-        filterMenuFood.addAll(originalMenuFood)
-        adapter.notifyDataSetChanged()
+        database = FirebaseDatabase.getInstance()
+        val foodRef: DatabaseReference = database.reference.child("menu")
+        originalMenuFood = mutableListOf()
+
+        foodRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for(foodSnapshot in snapshot.children){
+                    val menuItem  = foodSnapshot.getValue(Item::class.java)
+                    menuItem?.let { originalMenuFood.add(it) }
+                }
+                filterMenuFood.clear()
+                filterMenuFood.addAll(originalMenuFood)
+                adapter.notifyDataSetChanged()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.d("DatabaseError", "Error: ${error.message}")
+            }
+        })
+
+
     }
 
-    private fun getListFoods(): MutableList<Food> {
-        val list = mutableListOf<Food>()
-        list.add(Food("Burger","$5", R.drawable.menu1 ))
-        list.add(Food("Sandwich","$7", R.drawable.menu2 ))
-        list.add(Food("Momo","$9", R.drawable.menu3 ))
-        list.add(Food("Hamburger","$10", R.drawable.menu4 ))
-        list.add(Food("Spaghetti","$11", R.drawable.menu5 ))
-        list.add(Food("Fried Egg","$13", R.drawable.menu6 ))
-        list.add(Food("Salat","$15", R.drawable.menu7 ))
-        return list
-    }
 
     private fun setupSearchView() {
         binding.searchEdt.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
@@ -71,9 +87,9 @@ class SearchFragment : Fragment() {
     private fun filterMenuItems(query: String){
         filterMenuFood.clear()
 
-        originalMenuFood.forEach { food ->
-            if (food.foodName.contains(query, ignoreCase = true)) {
-                filterMenuFood.add(food)
+        originalMenuFood.forEach { item ->
+            if (item.foodName?.contains(query, ignoreCase = true) == true) {
+                filterMenuFood.add(item)
             }
         }
 //        originalMenuFood.forEachIndexed { index, food ->

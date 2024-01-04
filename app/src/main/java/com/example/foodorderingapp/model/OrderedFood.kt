@@ -1,8 +1,11 @@
 package com.example.foodorderingapp.model
 
+import java.io.Serializable
+
 data class OrderedFood (
-    val foodName: String,
-    val price: String,
-    val quantity: String,
-    val image: Int
-)
+    var foodName: String ?=null,
+    var foodPrice: String ?=null,
+    var foodDescription: String ?=null,
+    var foodQuantity: String ?=null,
+    var foodImage: String ?=null
+): Serializable

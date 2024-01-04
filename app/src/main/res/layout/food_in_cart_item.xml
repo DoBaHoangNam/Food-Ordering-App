@@ -12,7 +12,6 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:cardCornerRadius="@dimen/definite_dimen_18"
-        android:layout_marginStart="@dimen/definite_dimen_14"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -31,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginStart="@dimen/definite_dimen_20"
-        android:gravity="center"
+        android:gravity="left"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/cardView"
@@ -55,7 +54,7 @@
             android:layout_gravity="left"
             android:text="$7"
             android:textColor="@color/green"
-            android:textSize="@dimen/text_size_xhuge"
+            android:textSize="@dimen/text_size_small"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -104,8 +103,6 @@
             android:src="@drawable/trash"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/definite_dimen_8"/>
-
-
 
 
     </LinearLayout>

@@ -36,6 +36,7 @@
                 />
 
             <EditText
+                android:id="@+id/edtName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Do Ba Hoang Nam"
@@ -69,6 +70,7 @@
                 />
 
             <EditText
+                android:id="@+id/edtAddress"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Kim Nguu, Hai Ba Trung, Ha Noi"
@@ -102,6 +104,7 @@
                 />
 
             <EditText
+                android:id="@+id/edtEmail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="nam.dbh198248@sis.hust.edu.vn"
@@ -135,6 +138,7 @@
                 />
 
             <EditText
+                android:id="@+id/edtPhone"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="12345678"
@@ -149,6 +153,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSaveInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
