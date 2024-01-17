@@ -21,8 +21,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
     
-    <LinearLayout
-        android:id="@+id/LNInfor"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LNInforRecent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_white_button"
@@ -40,14 +40,24 @@
             android:layout_height="@dimen/definite_dimen_80"
             android:src="@drawable/img_recent_food"
             android:padding="@dimen/definite_dimen_10"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/LNDetails"
+            android:layout_width="@dimen/definite_dimen_0"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginRight="@dimen/definite_dimen_12"
+            android:layout_marginLeft="@dimen/definite_dimen_12"
+            app:layout_constraintLeft_toRightOf="@id/foodOrdered"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btnRecieved">
 
             <TextView
-                android:id="@+id/FoodNameTv"
+                android:id="@+id/foodNameTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Spacy fresh crab"
@@ -57,19 +67,7 @@
                 android:layout_marginTop="@dimen/definite_dimen_18"
                 android:textStyle="bold"
                 />
-            <TextView
-                android:id="@+id/restaurantNameTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="A restaurant"
-                android:fontFamily="@font/yeonsung_regular"
-                android:textSize="@dimen/text_size_small"
-                android:layout_marginStart="@dimen/definite_dimen_18"
-                android:layout_marginTop="@dimen/definite_dimen_4"
-                android:textStyle="normal"
-                android:textColor="@color/grey2"
 
-                />
             <TextView
                 android:id="@+id/foodPriceTv"
                 android:layout_width="wrap_content"
@@ -84,9 +82,19 @@
                 />
 
         </LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnRecieved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recieved"
+            android:background="@drawable/rounded_green_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
 
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/previousBuyTv"
@@ -97,7 +105,7 @@
         android:textSize="@dimen/text_size_normal"
         android:layout_marginStart="@dimen/definite_dimen_30"
         android:layout_marginTop="@dimen/definite_dimen_30"
-        app:layout_constraintTop_toBottomOf="@id/LNInfor"
+        app:layout_constraintTop_toBottomOf="@id/LNInforRecent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
